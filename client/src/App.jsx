@@ -8,8 +8,13 @@ import { UserContextProvider } from "./UserContext";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import PlacesPage from "./pages/PlacesPage";
+import PlacesFormPage from "./pages/PlacesFormPage";
 
 axios.defaults.baseURL = "http://localhost:4000/";
+axios.defaults.headers = {
+  "Content-type": "application/json",
+};
+
 axios.defaults.withCredentials = true;
 function App() {
   return (
@@ -20,8 +25,9 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/account" element={<ProfilePage />} />
-
           <Route path="/account/places" element={<PlacesPage />} />
+          <Route path="/account/places/new" element={<PlacesFormPage />} />
+          <Route path="/account/places/:id" element={<PlacesFormPage />} />
         </Route>
       </Routes>
     </UserContextProvider>
