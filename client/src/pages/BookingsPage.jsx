@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PlaceImage from "../components/PlaceImage";
+import BookingDates from "../components/BookingDates";
 
 export default function BookingsPage() {
   const [bookings, setBookings] = useState([]);
@@ -20,7 +21,7 @@ export default function BookingsPage() {
             <Link
               key={booking}
               to={`/account/bookings/${booking._id}`}
-              className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden"
+              className="flex gap-4 bg-gray-200 rounded-2xl  mt-3 overflow-hidden"
             >
               <div className="w-48">
                 <PlaceImage place={booking.place} />
@@ -28,10 +29,10 @@ export default function BookingsPage() {
               <div className="py-3 pr-3 grow">
                 <h2 className="text-xl">{booking.place.title}</h2>
                 <div className="text-xl">
-                  {/* <BookingDates
+                  <BookingDates
                     booking={booking}
                     className="mb-2 mt-4 text-gray-500"
-                  /> */}
+                  />
                   <div className="flex gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
