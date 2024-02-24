@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddressLink from "../components/AddressLink";
 import PlaceGallery from "../components/PlaceGallery";
+import BookingWidget from "../components/BookingWidget";
 
 export default function PlacePage() {
   const { id } = useParams();
@@ -35,7 +36,9 @@ export default function PlacePage() {
           <br />
           Max number of guests: {place.maxGuests}
         </div>
-        <div>{/* <BookingWidget place={place} /> */}</div>
+        <div>
+          <BookingWidget place={place} />
+        </div>
       </div>
       <div className="bg-white -mx-8 px-8 py-8 border-t">
         <div>
